@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flash_chat_starting_project/constants.dart';
 
 class ChatScreen extends StatefulWidget {
+  static const String id = 'chat_screen';
+
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
@@ -16,10 +18,11 @@ class _ChatScreenState extends State<ChatScreen> {
         leading: null,
         actions: <Widget>[
           IconButton(
-              icon: const Icon(Icons.logout),
-              onPressed: () {
-                // Implement logout functionality
-              }),
+            icon: const Icon(Icons.logout),
+            onPressed: () {
+              // Implement logout functionality
+            },
+          ),
         ],
         title: const Text('⚡ ️Chat'),
       ),
@@ -43,8 +46,11 @@ class _ChatScreenState extends State<ChatScreen> {
                     onPressed: () {
                       //Implement send functionality
                     },
-                    child: const Icon(Icons.send,
-                        size: 30, color: kSendButtonColor),
+                    child: const Icon(
+                      Icons.send,
+                      size: 30,
+                      color: kSendButtonColor,
+                    ),
                   ),
                 ],
               ),

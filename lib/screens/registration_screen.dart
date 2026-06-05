@@ -2,6 +2,8 @@ import '/constants.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationScreen extends StatefulWidget {
+  static const String id = 'registration_screen';
+
   @override
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }
@@ -17,18 +19,15 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              height: 200.0,
-              child: Image.asset('images/logo.png'),
-            ),
-            const SizedBox(
-              height: 48.0,
-            ),
+            Container(height: 200.0, child: Image.asset('images/logo.png')),
+            const SizedBox(height: 48.0),
             TextField(
               decoration: const InputDecoration(
                 hintText: 'Enter your email',
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                contentPadding: EdgeInsets.symmetric(
+                  vertical: 10.0,
+                  horizontal: 20.0,
+                ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
@@ -45,14 +44,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 //Do something with the user input
               },
             ),
-            const SizedBox(
-              height: 16,
-            ),
+            const SizedBox(height: 16),
             TextField(
               decoration: const InputDecoration(
                 hintText: 'Enter your password',
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                contentPadding: EdgeInsets.symmetric(
+                  vertical: 10.0,
+                  horizontal: 20.0,
+                ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
@@ -69,9 +68,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 //Do something with the user input
               },
             ),
-            const SizedBox(
-              height: 24.0,
-            ),
+            const SizedBox(height: 24.0),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 12),
               child: Material(
