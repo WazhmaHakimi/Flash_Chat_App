@@ -1,6 +1,6 @@
 import 'package:flash_chat_starting_project/screens/login_screen.dart';
 import 'package:flash_chat_starting_project/screens/registration_screen.dart';
-
+import 'package:animated_text_kit/animated_text_kit.dart';
 import '/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +16,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   late AnimationController controller;
 
   @override
-
   void initState() {
     super.initState();
     controller = AnimationController(
@@ -61,12 +60,15 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                     child: Image.asset('images/logo.png'),
                   ),
                 ),
-                Text(
-                  'Flash Chat',
+                DefaultTextStyle(
                   style: const TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
                     color: Colors.white,
+                  ),
+                  child: AnimatedTextKit(
+                    totalRepeatCount: 2,
+                    animatedTexts: [TyperAnimatedText('Flash Chat')],
                   ),
                 ),
               ],
