@@ -1,3 +1,4 @@
+import 'package:flash_chat_starting_project/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flash_chat_starting_project/constants.dart';
 
@@ -21,6 +22,8 @@ class _ChatScreenState extends State<ChatScreen> {
             icon: const Icon(Icons.logout),
             onPressed: () {
               // Implement logout functionality
+              Navigator.pop(context);
+              AuthService().signOut();
             },
           ),
         ],

@@ -1,8 +1,7 @@
 import 'package:email_validator/email_validator.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flash_chat_starting_project/screens/chat_screen.dart';
+import 'package:flash_chat_starting_project/services/auth_service.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-
 import '../components/rounded_button.dart';
 import '/constants.dart';
 import 'package:flutter/material.dart';
@@ -15,12 +14,12 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  var auth = FirebaseAuth.instance;
   String errorMessage = '';
-  bool errorOccured = false;
+  bool errorOccurred = false;
   bool showSpinner = false;
 
   @override
@@ -80,7 +79,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
               const SizedBox(height: 24.0),
               Visibility(
-                visible: errorOccured,
+                visible: errorOccurred,
                 child: Text(
                   errorMessage,
                   textAlign: TextAlign.center,
@@ -95,10 +94,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     try {
                       setState(() {
                         showSpinner = true;
-                        errorOccured = false;
+                        errorOccurred = false;
                       });
 
-                      await auth
+                      await AuthService()
                           .createUserWithEmailAndPassword(
                             email: _emailController.text,
                             password: _passwordController.text,
@@ -114,7 +113,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     } catch (e) {
                       setState(() {
                         showSpinner = false;
-                        errorOccured = true;
+                        errorOccurred = true;
                         errorMessage = e.toString().split(']')[1];
                       });
                     }
