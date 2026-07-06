@@ -6,10 +6,10 @@ A real-time chat application built with **Flutter**, featuring secure **Firebase
 
 | Welcom Page | Login Page | Register Page| Chat Screen |
 
-<img src="assets/images/Welcome_Screen.png" width="45%" style="padding: 2%" />
-<img src="assets/images/Register_Screen.png" width="45%" style="padding: 2%" />
-<img src="assets/images/Login_Screen.png" width="45%" style="padding: 2%" />
-<img src="assets/images/Chat_Screen.png" width="45%" style="padding: 2%" />
+<img src="assets/images/Welcome_Screen.png" width="40%" style="padding: 2%" />
+<img src="assets/images/Register_Screen.png" width="40%" style="padding: 2%" />
+<img src="assets/images/Login_Screen.png" width="40%" style="padding: 2%" />
+<img src="assets/images/Chat_Screen.png" width="40%" style="padding: 2%" />
 
 ## Technologies Used
 
